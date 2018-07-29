@@ -93,6 +93,7 @@ var budgetsView = Backbone.View.extend({
 		this.model.on('change', this.render, this);
 		this.model.on('remove', this.render, this);
 
+		// fetch all the data from mongodb
 		this.model.fetch({
 			success: function(response) {
 				_.each(response.toJSON(), function(item) {
@@ -100,7 +101,7 @@ var budgetsView = Backbone.View.extend({
 				})
 			},
 			error: function() {
-				console.log('Failed to get budgets x!');
+				console.log('Failed to get budgets !');
 			}
 		});
 	},
@@ -130,7 +131,7 @@ $(document).ready(function() {
 		$('.amount-input').val('');
 
 		budgets.add(new_budget);
-		budget.save(null, {
+		new_budget.save(null, {
 			success: function(response) {
 				console.log('Successfully SAVED budget with _id: ' + response.toJSON()._id);
 			},
