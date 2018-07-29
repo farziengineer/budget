@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" media="all" rel="stylesheet" type="text/css" />
+
+
+	<title>Budget App</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Budget App</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Task_name</th>
+					<th>Desciption</th>
+					<th>Amount</th>
+					<th>Created Time</th>
+					<th>Updated_Time</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td><input class="form-control task_name-input"></td>
+					<td><input class="form-control desciption-input"></td>
+					<td><input class="form-control amount-input"></td>
+					<td><input readonly="true" class="form-control created_time-input"></td>
+					<td><input readonly="true" class="form-control updated_time-input"></td>
+					<td><button class="btn btn-primary add-budget">Add</button></td>
+				</tr>
+			</thead>
+			<tbody class="budgets-list"></tbody>
+		</table>
+	</div>
+
+	<script type="text/template" class="budgets-list-template">
+	<td><span class="task_name"><%= task_name %></span></td>
+	<td><span class="desciption"><%= desciption %></span></td>
+	<td><span class="amount"><%= amount %></span></td>
+	<td><span class="created_time"><%= created_time %></span></td>
+	<td><span class="updated_time"> <%= updated_time %></span>
+	<td><button class="btn btn-warning edit-budget">Edit</button> <button class="btn btn-danger delete-budget">Delete</button><button class="btn btn-success update-budget" style="display:none">Update</button> <button class="btn btn-danger cancel" style="display:none">Cancel</button></td>
+	</script>
+	
+
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/zepto/1.1.6/zepto.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.1.16/backbone.localStorage-min.js"></script>
+  <script src="js/scripts.js"></script>
+  
+</body>
+</html>
