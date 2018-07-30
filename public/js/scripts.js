@@ -43,8 +43,8 @@ var budgetView = Backbone.View.extend({
 		var task_name = this.$('.task_name').html();
 		var desciption = this.$('.desciption').html();
 		var amount = this.$('.amount').html();
+		var created_time = this.$('.created_time').html();
 		var updated_time = new Date($.now());
-
 		this.$('.task_name').html('<input type="text" class="form-control task_name-update" value="' + task_name + '">');
 		this.$('.desciption').html('<input type="text" class="form-control desciption-update" value="' + desciption + '">');
 		this.$('.amount').html('<input type="text" class="form-control amount-update" value="' + amount + '">');
@@ -58,6 +58,8 @@ var budgetView = Backbone.View.extend({
 				'amount':this.$('.amount-update').val(),
 				'updated_time':new Date($.now())
 			});
+
+			this.model.save(null, {});
 	}, 
 
 
